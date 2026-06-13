@@ -123,12 +123,300 @@ a:hover {
     max-width: 550px;
 }
 
-/* Divider line - similar to navigation bar border */
+/* Divider line */
 .content-divider {
     width: 100%;
     height: 1px;
     background: rgba(255, 255, 255, 0.12);
-    margin: 24px 0 24px 0;
+    margin: 24px 0 48px 0;
+}
+
+/* ----- ABOUT SECTION ----- */
+.about-section {
+    margin-bottom: 80px;
+}
+
+/* Section Header (left aligned, format: 01 | About) */
+.section-header {
+    margin-bottom: 32px;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: #ffffff;
+}
+
+.section-number {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;
+}
+
+/* About Grid - 2 columns (description + timeline) */
+.about-grid {
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+    margin-bottom: 32px;
+}
+
+/* Left side - Description Text */
+.about-description {
+    flex: 1;
+    max-width: 500px;
+}
+
+.about-description p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1.5rem;
+}
+
+/* Right side - Timeline */
+.timeline {
+    flex: 1;
+    position: relative;
+    padding-left: 20px;
+}
+
+/* Vertical line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Each timeline item */
+.timeline-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+    position: relative;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Timeline dot */
+.timeline-dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    margin-top: 4px;
+    flex-shrink: 0;
+    transition: background 0.2s ease;
+}
+
+.timeline-item:hover .timeline-dot {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* Timeline content */
+.timeline-content {
+    flex: 1;
+}
+
+/* Timeline header with title and badge on same row */
+.timeline-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 4px;
+}
+
+.timeline-title {
+    font-size: 1.1rem;
+    font-weight: 550;
+    color: #ffffff;
+}
+
+/* Status Badge Styles */
+.status-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+/* Graduated - Green badge */
+.status-graduated {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    border: 0.5px solid rgba(74, 222, 128, 0.3);
+}
+
+/* Completed - Green badge (same as graduated) */
+.status-completed {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    border: 0.5px solid rgba(74, 222, 128, 0.3);
+}
+
+/* In Progress - Yellow badge */
+.status-in-progress {
+    background: rgba(234, 179, 8, 0.15);
+    color: #facc15;
+    border: 0.5px solid rgba(250, 204, 21, 0.3);
+}
+
+.timeline-date {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 4px;
+}
+
+.timeline-status {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* ----- CURRENT FOCUS SECTION ----- */
+.current-focus {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.focus-label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: -0.2px;
+}
+
+.focus-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.focus-tag {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 40px;
+    font-size: 0.85rem;
+    font-weight: 450;
+    color: rgba(255, 255, 255, 0.85);
+    transition: all 0.2s ease;
+}
+
+.focus-tag:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ----- PROJECTS SECTION ----- */
+.projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-bottom: 48px;
+}
+
+.project-item {
+    display: flex;
+    gap: 16px;
+    position: relative;
+}
+
+/* Project dot (single dot, no vertical line) */
+.project-dot {
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    margin-top: 6px;
+    flex-shrink: 0;
+    transition: background 0.2s ease;
+}
+
+.project-item:hover .project-dot {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.project-content {
+    flex: 1;
+}
+
+/* Project header with title, badge, and link icon on same row */
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+/* Wrapper for title and badge to sit together on the left */
+.project-title-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.project-title {
+    font-size: 1.1rem;
+    font-weight: 550;
+    color: #ffffff;
+}
+
+/* Small link icon - top right, only this is clickable */
+.project-link {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    padding: 4px;
+    line-height: 1;
+    display: inline-block;
+}
+
+.project-link:hover {
+    color: #ffffff;
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.project-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 6px;
+    max-width: 450px;
+}
+
+.project-date {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+/* ----- EMPTY SECTIONS (Placeholders for future content) ----- */
+.empty-section {
+    margin-bottom: 48px;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.empty-message {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.3);
+    letter-spacing: 0.3px;
 }
 
 /* Social Links */
@@ -153,7 +441,7 @@ a:hover {
     opacity: 1;
 }
 
-/* Right side - Image Placeholder (clean, no border, no plus) */
+/* Right side - Image Placeholder */
 .hero-image {
     flex: 1;
     display: flex;
@@ -166,10 +454,8 @@ a:hover {
     max-width: 380px;
     aspect-ratio: 1 / 1;
     background: transparent;
-    /* Empty - you add your image here */
 }
 
-/* When you add an image, use this CSS: */
 .image-placeholder img {
     width: 100%;
     height: 100%;
@@ -229,6 +515,39 @@ a:hover {
     .image-placeholder {
         max-width: 320px;
     }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .about-grid {
+        flex-direction: column;
+        gap: 2rem;
+        margin-bottom: 24px;
+    }
+
+    .about-description {
+        max-width: 100%;
+    }
+
+    .timeline {
+        width: 100%;
+    }
+
+    .current-focus {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 32px;
+    }
+
+    .project-description {
+        max-width: 100%;
+    }
+
+    .empty-section {
+        padding: 30px 0;
+    }
 }
 
 @media (max-width: 600px) {
@@ -250,6 +569,64 @@ a:hover {
     
     .image-placeholder {
         max-width: 260px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .about-description p {
+        font-size: 0.95rem;
+    }
+
+    .timeline-title {
+        font-size: 1rem;
+    }
+
+    .timeline-date, .timeline-status {
+        font-size: 0.75rem;
+    }
+
+    .status-badge {
+        font-size: 0.65rem;
+        padding: 2px 8px;
+    }
+
+    .focus-label {
+        font-size: 0.9rem;
+    }
+
+    .focus-tag {
+        font-size: 0.75rem;
+        padding: 4px 12px;
+    }
+
+    .project-title {
+        font-size: 1rem;
+    }
+
+    .project-description {
+        font-size: 0.85rem;
+    }
+
+    .project-date {
+        font-size: 0.7rem;
+    }
+
+    .project-link {
+        font-size: 0.8rem;
+    }
+
+    .project-title-wrapper {
+        gap: 6px;
+    }
+
+    .empty-section {
+        padding: 20px 0;
+    }
+
+    .empty-message {
+        font-size: 0.85rem;
     }
 }
 
