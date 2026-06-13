@@ -1,0 +1,259 @@
+/* ---------- RESET & BASE ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: system-ui, -apple-system, 'Segoe UI', 'Inter', 'Helvetica Neue', sans-serif;
+    line-height: 1.4;
+    font-weight: 400;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: opacity 0.2s ease;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+/* ----- NAVIGATION ----- */
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 0 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    margin-bottom: 64px;
+}
+
+.logo {
+    font-weight: 500;
+    font-size: 1.5rem;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.2rem;
+    list-style: none;
+}
+
+.nav-links li a {
+    padding: 6px 0;
+    display: inline-block;
+    font-size: 0.95rem;
+    letter-spacing: -0.2px;
+}
+
+/* ----- HERO SECTION (SPLIT LAYOUT) ----- */
+.hero-wrapper {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0 60px 0;
+}
+
+/* Left side - content */
+.hero-content {
+    flex: 1;
+}
+
+.hero-badge {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 1.5rem;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 550;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+}
+
+/* GLOW EFFECT for Syed Ali */
+.glow-text {
+    display: inline-block;
+    color: #ffffff;
+    text-shadow: 
+        0 0 5px rgba(255, 255, 255, 0.3),
+        0 0 10px rgba(255, 255, 255, 0.2),
+        0 0 20px rgba(255, 255, 255, 0.15);
+    animation: gentleGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes gentleGlow {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.2),
+                     0 0 10px rgba(255, 255, 255, 0.1),
+                     0 0 15px rgba(255, 255, 255, 0.05);
+    }
+    100% {
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.5),
+                     0 0 18px rgba(255, 255, 255, 0.3),
+                     0 0 28px rgba(255, 255, 255, 0.15);
+    }
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 2rem;
+    max-width: 550px;
+}
+
+/* Divider line - similar to navigation bar border */
+.content-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.12);
+    margin: 24px 0 24px 0;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    font-size: 0.95rem;
+    font-weight: 450;
+    color: rgba(255, 255, 255, 0.7);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 4px;
+    transition: all 0.2s ease;
+}
+
+.social-link:hover {
+    color: #ffffff;
+    border-bottom-color: #ffffff;
+    opacity: 1;
+}
+
+/* Right side - Image Placeholder (clean, no border, no plus) */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-placeholder {
+    width: 100%;
+    max-width: 380px;
+    aspect-ratio: 1 / 1;
+    background: transparent;
+    /* Empty - you add your image here */
+}
+
+/* When you add an image, use this CSS: */
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 24px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+    .hero-wrapper {
+        flex-direction: column;
+        gap: 3rem;
+    }
+    
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+        text-align: center;
+        margin-bottom: 48px;
+    }
+    
+    .logo {
+        text-align: center;
+    }
+    
+    .nav-links {
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+    
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .container {
+        padding: 0 24px;
+    }
+    
+    .hero-content {
+        text-align: center;
+    }
+    
+    .hero-description {
+        max-width: 100%;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .image-placeholder {
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .social-links {
+        gap: 1.2rem;
+    }
+    
+    .social-link {
+        font-size: 0.85rem;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+    }
+    
+    .image-placeholder {
+        max-width: 260px;
+    }
+}
+
+a:focus-visible {
+    outline: 1px solid white;
+    outline-offset: 4px;
+}
