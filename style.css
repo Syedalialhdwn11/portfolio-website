@@ -74,7 +74,6 @@ a:hover {
     padding: 20px 0 60px 0;
 }
 
-/* Left side - content */
 .hero-content {
     flex: 1;
 }
@@ -95,27 +94,19 @@ a:hover {
     margin-bottom: 1.5rem;
 }
 
-/* GLOW EFFECT for Syed Ali */
 .glow-text {
     display: inline-block;
     color: #ffffff;
-    text-shadow: 
-        0 0 5px rgba(255, 255, 255, 0.3),
-        0 0 10px rgba(255, 255, 255, 0.2),
-        0 0 20px rgba(255, 255, 255, 0.15);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3), 0 0 10px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.15);
     animation: gentleGlow 2s ease-in-out infinite alternate;
 }
 
 @keyframes gentleGlow {
     0% {
-        text-shadow: 0 0 5px rgba(255, 255, 255, 0.2),
-                     0 0 10px rgba(255, 255, 255, 0.1),
-                     0 0 15px rgba(255, 255, 255, 0.05);
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.2), 0 0 10px rgba(255, 255, 255, 0.1), 0 0 15px rgba(255, 255, 255, 0.05);
     }
     100% {
-        text-shadow: 0 0 8px rgba(255, 255, 255, 0.5),
-                     0 0 18px rgba(255, 255, 255, 0.3),
-                     0 0 28px rgba(255, 255, 255, 0.15);
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.5), 0 0 18px rgba(255, 255, 255, 0.3), 0 0 28px rgba(255, 255, 255, 0.15);
     }
 }
 
@@ -127,7 +118,6 @@ a:hover {
     max-width: 550px;
 }
 
-/* Divider line */
 .content-divider {
     width: 100%;
     height: 1px;
@@ -135,18 +125,7 @@ a:hover {
     margin: 24px 0 48px 0;
 }
 
-/* ----- SECTION WRAPPERS (for smooth scroll targeting) ----- */
-.section-wrapper {
-    scroll-margin-top: 80px;
-}
-
-/* ----- ABOUT SECTION ----- */
-.about-section {
-    margin-bottom: 80px;
-    scroll-margin-top: 80px;
-}
-
-/* Section Header (left aligned, format: 01 | About) */
+/* ----- SECTION HEADER ----- */
 .section-header {
     margin-bottom: 32px;
     scroll-margin-top: 80px;
@@ -164,7 +143,20 @@ a:hover {
     font-weight: 400;
 }
 
-/* About Grid - 2 columns (description + timeline) */
+/* Yellow hint text below Projects header */
+.section-subtitle {
+    font-size: 0.85rem;
+    color: #facc15;
+    margin-top: 8px;
+    opacity: 0.8;
+}
+
+/* ----- ABOUT SECTION ----- */
+.about-section {
+    margin-bottom: 80px;
+    scroll-margin-top: 80px;
+}
+
 .about-grid {
     display: flex;
     gap: 4rem;
@@ -172,7 +164,6 @@ a:hover {
     margin-bottom: 32px;
 }
 
-/* Left side - Description Text */
 .about-description {
     flex: 1;
     max-width: 500px;
@@ -185,14 +176,13 @@ a:hover {
     margin-bottom: 1.5rem;
 }
 
-/* Right side - Timeline */
+/* Timeline */
 .timeline {
     flex: 1;
     position: relative;
     padding-left: 20px;
 }
 
-/* Vertical line */
 .timeline::before {
     content: '';
     position: absolute;
@@ -203,7 +193,6 @@ a:hover {
     background: rgba(255, 255, 255, 0.2);
 }
 
-/* Each timeline item */
 .timeline-item {
     display: flex;
     gap: 16px;
@@ -215,7 +204,6 @@ a:hover {
     margin-bottom: 0;
 }
 
-/* Timeline dot */
 .timeline-dot {
     width: 12px;
     height: 12px;
@@ -230,12 +218,10 @@ a:hover {
     background: rgba(255, 255, 255, 0.9);
 }
 
-/* Timeline content */
 .timeline-content {
     flex: 1;
 }
 
-/* Timeline header with title and badge on same row */
 .timeline-header {
     display: flex;
     flex-wrap: wrap;
@@ -260,21 +246,12 @@ a:hover {
     letter-spacing: 0.3px;
 }
 
-/* Graduated - Green badge */
-.status-graduated {
+.status-graduated, .status-completed, .status-received {
     background: rgba(34, 197, 94, 0.15);
     color: #4ade80;
     border: 0.5px solid rgba(74, 222, 128, 0.3);
 }
 
-/* Completed - Green badge (same as graduated) */
-.status-completed {
-    background: rgba(34, 197, 94, 0.15);
-    color: #4ade80;
-    border: 0.5px solid rgba(74, 222, 128, 0.3);
-}
-
-/* In Progress / Upcoming - Yellow badge */
 .status-in-progress {
     background: rgba(234, 179, 8, 0.15);
     color: #facc15;
@@ -292,7 +269,7 @@ a:hover {
     color: rgba(255, 255, 255, 0.4);
 }
 
-/* ----- CURRENT FOCUS SECTION ----- */
+/* Current Focus */
 .current-focus {
     display: flex;
     flex-wrap: wrap;
@@ -333,9 +310,9 @@ a:hover {
 
 /* ----- PROJECTS SECTION ----- */
 .projects-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 40px;
     margin-bottom: 48px;
 }
 
@@ -345,7 +322,6 @@ a:hover {
     position: relative;
 }
 
-/* Project dot (single dot, no vertical line) */
 .project-dot {
     width: 10px;
     height: 10px;
@@ -364,16 +340,15 @@ a:hover {
     flex: 1;
 }
 
-/* Project header with title, badge, and link icon on same row */
 .project-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
     margin-bottom: 8px;
+    gap: 8px;
 }
 
-/* Wrapper for title and badge to sit together on the left */
 .project-title-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -387,7 +362,6 @@ a:hover {
     color: #ffffff;
 }
 
-/* Small link icon - top right, only this is clickable */
 .project-link {
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.5);
@@ -409,7 +383,6 @@ a:hover {
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.6);
     margin-bottom: 6px;
-    max-width: 450px;
 }
 
 .project-date {
@@ -417,7 +390,7 @@ a:hover {
     color: rgba(255, 255, 255, 0.35);
 }
 
-/* ----- EVENTS SECTION (Card Style) ----- */
+/* ----- EVENTS SECTION ----- */
 .events-grid {
     display: flex;
     flex-direction: column;
@@ -444,7 +417,6 @@ a:hover {
     flex: 1;
 }
 
-/* Event title wrapper for title + tag on same row */
 .event-title-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -460,7 +432,6 @@ a:hover {
     margin-bottom: 0;
 }
 
-/* Organization tag bubble - same style as current focus tags */
 .event-org-tag {
     display: inline-block;
     padding: 4px 12px;
@@ -500,7 +471,7 @@ a:hover {
 .video-wrapper {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    padding-bottom: 56.25%;
     border-radius: 12px;
     overflow: hidden;
 }
@@ -514,7 +485,7 @@ a:hover {
     border-radius: 12px;
 }
 
-/* ----- CERTIFICATES SECTION (Card Style - Larger Image) ----- */
+/* ----- CERTIFICATES SECTION ----- */
 .certificates-grid {
     display: flex;
     flex-direction: column;
@@ -541,7 +512,6 @@ a:hover {
     flex: 1;
 }
 
-/* Certificate title wrapper for title + badge */
 .certificate-title-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -593,7 +563,6 @@ a:hover {
     opacity: 1;
 }
 
-/* Certificate Media - Larger than event media */
 .certificate-media {
     flex-shrink: 0;
     width: 320px;
@@ -618,7 +587,68 @@ a:hover {
     transform: scale(1.02);
 }
 
-/* ----- EMPTY SECTIONS (Placeholders for future content) ----- */
+/* ----- AWARDS SECTION (No images, same style as certificates) ----- */
+.awards-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 48px;
+}
+
+.award-card {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 24px;
+    transition: border-color 0.2s ease;
+}
+
+.award-card:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.award-content {
+    flex: 1;
+}
+
+.award-title-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.award-title {
+    font-size: 1.25rem;
+    font-weight: 550;
+    color: #ffffff;
+    margin-bottom: 0;
+}
+
+.award-issuer {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 6px;
+}
+
+.award-date {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 12px;
+}
+
+.award-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 500px;
+}
+
+/* Empty Sections */
 .empty-section {
     margin-bottom: 48px;
     padding: 40px 0;
@@ -653,7 +683,6 @@ a:hover {
     opacity: 1;
 }
 
-/* Right side - Image Placeholder */
 .hero-image {
     flex: 1;
     display: flex;
@@ -753,16 +782,16 @@ a:hover {
         margin-bottom: 32px;
     }
 
-    .project-description {
-        max-width: 100%;
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
     }
 
     .empty-section {
         padding: 30px 0;
     }
 
-    /* Events responsive */
-    .event-card {
+    .event-card, .certificate-card, .award-card {
         flex-direction: column;
         gap: 20px;
     }
@@ -771,14 +800,8 @@ a:hover {
         width: 100%;
     }
 
-    .event-description {
+    .event-description, .certificate-description, .award-description {
         max-width: 100%;
-    }
-
-    /* Certificates responsive */
-    .certificate-card {
-        flex-direction: column;
-        gap: 20px;
     }
 
     .certificate-media {
@@ -866,11 +889,11 @@ a:hover {
         font-size: 0.85rem;
     }
 
-    .event-title {
+    .event-title, .certificate-title, .award-title {
         font-size: 1.1rem;
     }
 
-    .event-description {
+    .event-description, .certificate-description, .award-description {
         font-size: 0.85rem;
     }
 
@@ -880,16 +903,15 @@ a:hover {
         white-space: normal;
     }
 
-    /* Certificates responsive */
-    .certificate-title {
+    .certificate-title, .award-title {
         font-size: 1.1rem;
     }
 
-    .certificate-description {
+    .certificate-description, .award-description {
         font-size: 0.85rem;
     }
 
-    .certificate-issuer, .certificate-date {
+    .certificate-issuer, .certificate-date, .award-issuer, .award-date {
         font-size: 0.75rem;
     }
 
