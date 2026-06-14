@@ -274,7 +274,7 @@ a:hover {
     border: 0.5px solid rgba(74, 222, 128, 0.3);
 }
 
-/* In Progress - Yellow badge */
+/* In Progress / Upcoming - Yellow badge */
 .status-in-progress {
     background: rgba(234, 179, 8, 0.15);
     color: #facc15;
@@ -415,6 +415,207 @@ a:hover {
 .project-date {
     font-size: 0.75rem;
     color: rgba(255, 255, 255, 0.35);
+}
+
+/* ----- EVENTS SECTION (Card Style) ----- */
+.events-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 48px;
+}
+
+.event-card {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 24px;
+    transition: border-color 0.2s ease;
+}
+
+.event-card:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.event-content {
+    flex: 1;
+}
+
+/* Event title wrapper for title + tag on same row */
+.event-title-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.event-title {
+    font-size: 1.25rem;
+    font-weight: 550;
+    color: #ffffff;
+    margin-bottom: 0;
+}
+
+/* Organization tag bubble - same style as current focus tags */
+.event-org-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 40px;
+    font-size: 0.7rem;
+    font-weight: 450;
+    color: rgba(255, 255, 255, 0.7);
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.event-org-tag:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.event-date {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 10px;
+}
+
+.event-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 500px;
+}
+
+.event-media {
+    flex-shrink: 0;
+    width: 240px;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
+
+/* ----- CERTIFICATES SECTION (Card Style - Larger Image) ----- */
+.certificates-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 48px;
+}
+
+.certificate-card {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 24px;
+    transition: border-color 0.2s ease;
+}
+
+.certificate-card:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.certificate-content {
+    flex: 1;
+}
+
+/* Certificate title wrapper for title + badge */
+.certificate-title-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.certificate-title {
+    font-size: 1.25rem;
+    font-weight: 550;
+    color: #ffffff;
+    margin-bottom: 0;
+}
+
+.certificate-issuer {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 6px;
+}
+
+.certificate-date {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 12px;
+}
+
+.certificate-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 500px;
+    margin-bottom: 16px;
+}
+
+.certificate-link {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 450;
+    color: rgba(255, 255, 255, 0.7);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 4px;
+    transition: all 0.2s ease;
+}
+
+.certificate-link:hover {
+    color: #ffffff;
+    border-bottom-color: #ffffff;
+    opacity: 1;
+}
+
+/* Certificate Media - Larger than event media */
+.certificate-media {
+    flex-shrink: 0;
+    width: 320px;
+}
+
+.cert-image-placeholder {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.cert-image-placeholder img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    transition: transform 0.2s ease;
+}
+
+.certificate-card:hover .cert-image-placeholder img {
+    transform: scale(1.02);
 }
 
 /* ----- EMPTY SECTIONS (Placeholders for future content) ----- */
@@ -559,6 +760,31 @@ a:hover {
     .empty-section {
         padding: 30px 0;
     }
+
+    /* Events responsive */
+    .event-card {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .event-media {
+        width: 100%;
+    }
+
+    .event-description {
+        max-width: 100%;
+    }
+
+    /* Certificates responsive */
+    .certificate-card {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .certificate-media {
+        width: 100%;
+        max-width: 320px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -638,6 +864,41 @@ a:hover {
 
     .empty-message {
         font-size: 0.85rem;
+    }
+
+    .event-title {
+        font-size: 1.1rem;
+    }
+
+    .event-description {
+        font-size: 0.85rem;
+    }
+
+    .event-org-tag {
+        font-size: 0.65rem;
+        padding: 3px 10px;
+        white-space: normal;
+    }
+
+    /* Certificates responsive */
+    .certificate-title {
+        font-size: 1.1rem;
+    }
+
+    .certificate-description {
+        font-size: 0.85rem;
+    }
+
+    .certificate-issuer, .certificate-date {
+        font-size: 0.75rem;
+    }
+
+    .certificate-link {
+        font-size: 0.8rem;
+    }
+
+    .certificate-media {
+        max-width: 100%;
     }
 }
 
